@@ -99,6 +99,7 @@ def search():
     loop = asyncio.get_event_loop()
     pool = ProcessPoolExecutor(THREADS_COUNT)
     
+    # TODO: It appears L doesn't have to be positive.
     params_min, params_max = 0.1, 100
     params_count = 8
     
