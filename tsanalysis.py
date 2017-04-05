@@ -73,7 +73,13 @@ def goes_to_limit_point(time_series,
                    + f'the choosen confidence count n={n}.')
 
 
-
+# TODO: What about the case when distances are decreasing,
+# but the function in still unbounded? Like log(x) or the harmonic series.
+# The solution might be to consider not the distances between the dots,
+# but the distances between the final dot and all the others backwards.
+# If those distances increase (supposing the time series is long enough),
+# then it is definetely tends to infinity.
+# We didn't use eps in the last take on it, but do we need it now?
 def goes_to_infinity(time_series,
                      norm=np_norm,
                      n=DEFAULD_CONFIDENCE_COUNT):
