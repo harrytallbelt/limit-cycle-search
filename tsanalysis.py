@@ -124,6 +124,7 @@ def goes_to_limit_cycle(time_series,
                 cycle_flag, period = True, i - j
                 # Walk backwards with this period and check
                 # if all the points will be close enough.
+                # TODO: we shouldn't walk the series to the very end.
                 curr = time_series[j]
                 for k in range(j - period, 0, -period):
                     next, curr = curr, time_series[k]
